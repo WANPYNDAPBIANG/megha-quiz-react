@@ -13,14 +13,24 @@ import userRouter from "./routes/userRoutes.js";
 import quizRouter from "./routes/quizRoute.js";
 
 const app = express();
-// Add or replace with this exact block
+
 app.use(cors({ 
-  origin: [
-    "http://localhost:5173", 
-    "https://bug-free-trout-p5646r5gxjp279r6-5173.app.github.dev",
-    "https://megha-quiz-react-yley.vercel.app",
-    "https://megha-quiz-react.vercel.app/"
-  ],
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      "http://localhost:5173", 
+      "https://github.dev",
+      "https://vercel.app",
+      "https://vercel.app"
+    ];
+
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.indexOf(origin) !== -1 || origin.endsWith('.vercel.app')) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
