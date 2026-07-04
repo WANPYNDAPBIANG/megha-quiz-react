@@ -17,7 +17,7 @@ const app = express();
 app.use(cors({ 
   origin: [
     "http://localhost:5173", 
-    "https://studious-space-orbit-9gxrx9gqx4g37xx9-5173.app.github.dev"
+    "https://bug-free-trout-p5646r5gxjp279r6-5173.app.github.dev"
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
