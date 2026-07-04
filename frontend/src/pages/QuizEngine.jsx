@@ -589,12 +589,12 @@ const QuizEngine = () => {
                         <span className="option-text">{optStr}</span>
                         {isCorrectChoice && (
                           <span className="option-badge correct">
-                            Correct Answer
+                            Genius 
                           </span>
                         )}
                         {isUserSelection && !isCorrectChoice && (
                           <span className="option-badge selected">
-                            Your Selection
+                            You Fool
                           </span>
                         )}
                       </div>
