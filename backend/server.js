@@ -17,7 +17,8 @@ const app = express();
 app.use(cors({ 
   origin: [
     "http://localhost:5173", 
-    "https://bug-free-trout-p5646r5gxjp279r6-5173.app.github.dev"
+    "https://bug-free-trout-p5646r5gxjp279r6-5173.app.github.dev",
+    "https://megha-quiz-react-yley.vercel.app"
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
