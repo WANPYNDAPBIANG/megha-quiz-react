@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { AppContext } from "../context/AppContext.jsx";
@@ -7,13 +7,14 @@ import { BookOpen, GraduationCap, ChevronRight, LayoutGrid } from "lucide-react"
 
 function Practice() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { backendUrl } = useContext(AppContext);
 
   // Core UI Control States
   const [exams, setExams] = useState([]);
   const [selectedExam, setSelectedExam] = useState(null);
   const [topics, setTopics] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("MPSC");
+  const [activeCategory, setActiveCategory] = useState(location.state?.targetCategory || "MPSC");
   const [loading, setLoading] = useState(false);
 
     // Fetch all exams on component mount

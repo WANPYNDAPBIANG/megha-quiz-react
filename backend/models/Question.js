@@ -7,6 +7,11 @@ const questionSchema = new mongoose.Schema({
     required: true,
     index: true
   },
+  passage: {
+  type: String,
+  default: "" // Left blank for regular standalone MCQs
+},
+
   question: {
     type: String,
     required: true,

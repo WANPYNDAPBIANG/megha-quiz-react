@@ -11,6 +11,7 @@ import connectDB from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import quizRouter from "./routes/quizRoute.js";
+import authorityRouter from "./routes/authorityRoutes.js";
 
 const app = express();
 
@@ -47,6 +48,7 @@ app.get("/", (req, res) => res.send("API Working"));
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/quiz", quizRouter);
+app.use("/api/authorities", authorityRouter);
 
 app.listen(port, () =>
   console.log(`server started on http://localhost:${port}`),
