@@ -43,7 +43,6 @@ function App() {
             
             <Route path="/signup" element={<Auth/>} />
             <Route path="/about" element={<About/>} />
-            <Route path="/quiz" element={<QuizEngine/>} />
             <Route path="/leaderboard" element={<Leaderboard/>} />
             <Route path="/admin" element={<AdminPanel/>} />
             
